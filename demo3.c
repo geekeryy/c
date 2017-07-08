@@ -1,9 +1,18 @@
 #include <stdio.h>
+static int a=10;		//全局静态变量 
+void func();
 int main(){
-	printf("hello!");
-	printf("hello!");
-	printf("hello!");
-	printf("hello!");
-	printf("hello!");
+	while(a--){
+		func();
+	}
 	return 0;
 }
+void func(){
+	static int b=5;		//局部静态变量 
+	b++;
+	printf("a=%d\tb=%d\n",a,b);
+}
+/***********************************************************
+静态变量 
+1.全局变量每次调用时不会重置 
+************************************************************/
